@@ -1,0 +1,17 @@
+{
+  "name": "fair-proxy",
+  "version": "1.0.0",
+  "description": "Proxy server for directing requests from fair-next app to 3rd party APIs that require IP whitelisting.",
+  "main": "proxyServer.js",
+  "scripts": {
+    "start": "node proxyServer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ahsan Zafar",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "express": "^4.19.2",
+    "express-http-proxy": "^2.0.0"
+  }
+}
