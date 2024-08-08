@@ -9,7 +9,15 @@ app.get("/status", (req, res) => {
   res.send("Proxy server is running smoothly!");
 });
 
-app.use("/", proxy(API_BASE_URL));
+app.use(
+  "/",
+  proxy(API_BASE_URL, {
+    filter: (req, res) => {
+      console.log("Request: ", req.body, req.params);
+      return true;
+    },
+  })
+);
 
 app.listen(PORT, () => {
   console.log(`Proxy server is running on http://localhost:${PORT}`);
